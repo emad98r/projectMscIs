@@ -1,0 +1,135 @@
+.section-6 {
+  width: 100%;
+  margin: 2em 0;
+
+  .container {
+    .info-6 {
+      text-align: center;
+      margin-bottom: 2em;
+
+      .big-title {
+        text-transform: capitalize;
+        margin-bottom: 1em;
+        font-weight: 800;
+        position: relative;
+
+        &::after {
+          content: '';
+          width: 4em;
+          height: 2px;
+          background-color: var(--main-color);
+          position: absolute;
+          top: 120%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    .products {
+      grid-template-columns: repeat(5, auto);
+      grid-template-rows: repeat(2, auto);
+
+      @include breakPoints(mobile) {
+        grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+        grid-template-rows: none;
+      }
+
+      @include breakPoints(small) {
+        grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+        grid-template-rows: none;
+      }
+
+      .product {
+        &:nth-of-type(4) {
+          grid-row: 1/3;
+          grid-column: 4/6;
+
+          @include breakPoints(mobile) {
+            grid-column: inherit;
+            grid-row: inherit;
+          }
+
+          @include breakPoints(small) {
+            grid-column: inherit;
+            grid-row: inherit;
+          }
+
+          >img {
+            width: 100%;
+            margin-bottom: 3em;
+
+            @include breakPoints(mobile) {
+              margin: 0;
+            }
+          }
+
+          .discp {
+            margin: 1em 0;
+            text-transform: capitalize;
+
+            @include breakPoints(small) {
+              display: none;
+            }
+          }
+
+          .last-day {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+
+            section {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              b {
+                text-transform: uppercase;
+                color: red;
+              }
+
+              p {
+                color: gray;
+              }
+            }
+          }
+        }
+
+        &:nth-of-type(5) {
+          grid-column: 1/4;
+          grid-row: 2/3;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          @include breakPoints(mobile) {
+            grid-column: inherit;
+            grid-row: inherit;
+            display: block;
+          }
+
+          @include breakPoints(small) {
+            grid-column: inherit;
+            grid-row: inherit;
+            display: block;
+          }
+
+          >img {
+            width: 30%;
+
+            @include breakPoints(mobile) {
+              width: 100%;
+            }
+
+            @include breakPoints(small) {
+              width: 100%;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

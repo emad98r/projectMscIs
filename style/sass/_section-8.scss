@@ -1,0 +1,44 @@
+.section-8 {
+  width: 100%;
+  margin: 5em 0;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+
+    @include breakPoints(mobile) {
+      padding: 0 1em;
+    }
+
+    section {
+      border: 1px solid rgb(201, 201, 201);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 2em;
+      text-align: center;
+
+      @include breakPoints(mobile) {
+        padding: 1em;
+      }
+
+      img {
+        width: 2.2em;
+        margin-bottom: 1em;
+      }
+
+      b {
+        text-transform: capitalize;
+        font-size: 1.2em;
+        font-weight: 500;
+      }
+
+      p {
+        color: gray;
+        font-size: 1em;
+      }
+    }
+  }
+}

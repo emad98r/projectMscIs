@@ -1,0 +1,333 @@
+.sub-header {
+  width: 100%;
+  background-color: var(--dark-color);
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em 0;
+
+    @include breakPoints(mobile) {
+      flex-direction: column;
+    }
+
+    .lang-money {
+
+      select {
+        background-color: var(--dark-color);
+        border: none;
+        outline: none;
+        color: var(--white-color);
+        cursor: pointer;
+
+        &:hover {
+          border-bottom: 1px solid var(--main-color);
+          padding-bottom: 0.5em;
+        }
+
+        option {
+          color: var(-white-color);
+        }
+      }
+    }
+
+    section {
+      img {
+        width: 1.5em;
+        margin-right: 0.5em;
+      }
+    }
+
+    ul {
+      display: flex;
+
+      @include breakPoints(mobile) {
+        font-size: 0.8em;
+      }
+
+      li {
+        padding: .5em;
+        display: flex;
+        align-items: center;
+
+
+
+        a {
+          color: var(--white-color);
+          text-transform: capitalize;
+          display: flex;
+          align-items: center;
+          transition: 0.3s;
+
+          &:hover {
+            color: var(--main-color)
+          }
+        }
+      }
+    }
+
+    .user-info {
+      ul {
+        li {
+          &:nth-of-type(2) {
+            a {
+              border-right: 1px solid var(--white-color);
+              padding-right: 1em;
+
+            }
+
+
+          }
+
+          &:nth-of-type(3) {
+            a {
+              &:hover {
+                color: rgb(7, 255, 7);
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+.main-header {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 1em;
+
+    .logo {
+      width: 10em;
+
+      @include breakPoints(mobile) {
+        width: 7em;
+      }
+    }
+
+    .search_bar-nav {
+      display: flex;
+      align-items: center;
+
+      .menu {
+        text-transform: capitalize;
+        padding: .6em 1em;
+        border: 1px solid gainsboro;
+        font-size: 0.9em;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+          color: var(--main-color);
+        }
+
+        img {
+          width: 1.3em;
+          margin-right: 1em;
+        }
+
+        #cancelMenu {
+          display: none;
+        }
+      }
+
+      ul {
+        text-transform: capitalize;
+        position: absolute;
+        top: 5.5em;
+        display: none;
+        user-select: none;
+        z-index: 5;
+        background-color: var(--background-color);
+        border: 1px solid gainsboro;
+
+        @include breakPoints(mobile) {
+          left: 0;
+          width: 100%;
+        }
+
+        img {
+          width: 0.5em;
+          margin-left: 1em;
+        }
+
+        #cancelBtn {
+          transform: rotateY(180deg);
+          display: none;
+        }
+
+        li {
+          text-transform: capitalize;
+          cursor: pointer;
+          padding: 0.5em 2em;
+          color: var(--dark-color);
+          border-bottom: 1px solid #e0e0e0;
+
+          &:hover {
+            background-color: var(--main-color);
+            color: var(--white-color);
+          }
+        }
+
+      }
+
+      .ele-option {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        ul {
+          position: absolute;
+          top: 1.5em;
+          right: -13em;
+          background-color: gainsboro;
+
+          @include breakPoints(mobile) {
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            top: 2.5em;
+          }
+
+          li {
+            border-bottom: 1px solid white;
+          }
+        }
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+
+        @include breakPoints(mobile) {
+          display: none;
+        }
+
+        input {
+          font-family: monospace;
+          width: 30rem;
+          padding: .7em 1em;
+          border: 1px solid gainsboro;
+          height: 3em;
+
+          @include breakPoints(small) {
+            width: 15rem;
+          }
+        }
+
+        button {
+          background-color: var(--main-color);
+          padding: .5em 1em;
+          height: 3em;
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--dark-color);
+          }
+
+          img {
+            width: 1.5em;
+          }
+        }
+      }
+    }
+
+    .liked-cart {
+      display: flex;
+      align-items: center;
+
+      div {
+        width: 2.2em;
+        height: 2.2em;
+        border-radius: 50%;
+        // padding: 0.5em;
+        outline: 1px solid rgb(189, 189, 189);
+        margin: 0 .3em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+
+        @include breakPoints(mobile) {
+          width: 1.4em;
+          height: 1.4em;
+        }
+
+        &:hover {
+          outline: 1px solid var(--main-color);
+        }
+
+        &:first-of-type {
+          &::after {
+            content: '0';
+            position: absolute;
+            top: -1em;
+            right: -0.5em;
+            background-color: black;
+            color: var(--white-color);
+            padding: 0.2em;
+            width: 0.8em;
+            height: 0.8em;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+
+            @include breakPoints(mobile) {
+              font-size: 0.8em;
+            }
+          }
+        }
+
+        &:last-of-type {
+          &::after {
+            content: '2';
+            position: absolute;
+            top: -1em;
+            right: -0.5em;
+            background-color: black;
+            color: var(--white-color);
+            padding: 0.2em;
+            width: 0.8em;
+            height: 0.8em;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+
+            @include breakPoints(mobile) {
+              font-size: 0.8em;
+            }
+          }
+        }
+
+        img {
+          width: 1.2em;
+
+          @include breakPoints(mobile) {
+            width: 1em;
+          }
+        }
+      }
+    }
+  }
+}
+
+.active-nav {
+  display: block !important;
+}
+
+.cancelBtn {
+  transform: rotateY(180deg);
+}

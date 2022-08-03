@@ -1,0 +1,51 @@
+.section-2 {
+  width: 100%;
+  margin-bottom: 2em;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+    gap: 3em;
+
+    section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1em;
+
+      &:first-of-type {
+        background-color: #f2f1ed;
+      }
+
+      &:nth-of-type(2) {
+        background-color: #f8eeec;
+      }
+
+      &:nth-of-type(3) {
+        background-color: #eff0f5;
+      }
+
+      article {
+        h1 {
+          font-size: 1.2em;
+          font-weight: 200;
+          text-transform: capitalize;
+          margin-bottom: 0.5em;
+        }
+
+        a {
+          color: var(--main-color);
+          text-transform: capitalize;
+
+          &:hover {
+            color: red;
+          }
+        }
+      }
+
+      img {
+        width: 70%;
+      }
+    }
+  }
+}

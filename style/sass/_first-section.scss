@@ -1,0 +1,144 @@
+.section-1 {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  overflow-x: hidden;
+  margin-bottom: 2em;
+
+  @keyframes moving1 {
+    0% {
+      transform: translateX(0);
+    }
+
+    30% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(-100vw);
+    }
+
+    100% {
+      transform: translateX(-100vw);
+    }
+  }
+
+  .big-container {
+    width: 200vw;
+    animation: moving1 7s ease-in infinite alternate;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10em;
+
+    @include breakPoints(mobile) {
+      margin: 0;
+    }
+
+    @include breakPoints(small) {
+      margin: 0;
+    }
+  }
+
+  .container {
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+
+    @include breakPoints(mobile) {
+      margin: 0;
+      flex-direction: column-reverse;
+
+    }
+
+    @include breakPoints(small) {
+      margin: 0 1em;
+    }
+
+    .info {
+      width: 50%;
+
+      @include breakPoints(mobile) {
+        width: 100%;
+        padding: 0 1em;
+      }
+
+
+      h4 {
+        color: gray;
+        text-transform: capitalize;
+      }
+
+      h1 {
+        font-size: 2.6em;
+        color: var(--main-color);
+        text-transform: capitalize;
+        margin-bottom: .5em;
+
+        @include breakPoints(mobile) {
+          font-size: 1.5em;
+        }
+
+        @include breakPoints(small) {
+          font-size: 1.8em;
+        }
+      }
+
+      p {
+        line-height: 1.6;
+        margin-bottom: 0.5em;
+        text-transform: lowercase;
+      }
+
+      .price {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 1em;
+
+        del {
+          margin-right: 1em;
+          color: gray;
+        }
+
+        b {
+          color: red;
+        }
+      }
+
+      button {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        padding: 1em 1.2em;
+        cursor: pointer;
+        background-color: var(--main-color);
+        color: var(--white-color);
+        border-radius: 5px;
+
+        &:hover {
+          background-color: var(--white-color);
+          color: var(--main-color);
+          outline: 1px solid var(--main-color)
+        }
+      }
+    }
+
+    img {
+      width: 30%;
+      margin-left: 3em;
+
+      @include breakPoints(mobile) {
+        margin: 0 0 1em 0;
+        width: 100%;
+      }
+
+      @include breakPoints(small) {
+        width: 50%;
+      }
+    }
+  }
+}
