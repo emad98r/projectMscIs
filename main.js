@@ -123,3 +123,21 @@ singInCancelBtn.addEventListener("click", () => {
 // window.addEventListener("load", () => {
 //   loadingPage.style.display = 'none'
 // })
+
+
+// added successfully -----------------
+
+let addS_Btn = document.querySelectorAll(".addedS");
+let addedS_output = document.querySelector(".addedS-output")
+addS_Btn.forEach(e => {
+  e.addEventListener('click', () => {
+    showAlert();
+    setTimeout(hideAlert, 2000)
+  });
+});
+function showAlert() {
+  addedS_output.style.cssText = `display:block;`
+}
+function hideAlert() {
+  addedS_output.style.cssText = `display:none;`
+}
