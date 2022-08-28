@@ -12,25 +12,7 @@
       flex-direction: column;
     }
 
-    .lang-money {
 
-      select {
-        background-color: var(--dark-color);
-        border: none;
-        outline: none;
-        color: var(--white-color);
-        cursor: pointer;
-
-        &:hover {
-          border-bottom: 1px solid var(--main-color);
-          padding-bottom: 0.5em;
-        }
-
-        option {
-          color: var(-white-color);
-        }
-      }
-    }
 
     section {
       img {
@@ -266,51 +248,9 @@
           outline: 1px solid var(--main-color);
         }
 
-        &:first-of-type {
-          &::after {
-            content: '0';
-            position: absolute;
-            top: -1em;
-            right: -0.5em;
-            background-color: black;
-            color: var(--white-color);
-            padding: 0.2em;
-            width: 0.8em;
-            height: 0.8em;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9em;
 
-            @include breakPoints(mobile) {
-              font-size: 0.8em;
-            }
-          }
-        }
 
-        &:last-of-type {
-          &::after {
-            content: '2';
-            position: absolute;
-            top: -1em;
-            right: -0.5em;
-            background-color: black;
-            color: var(--white-color);
-            padding: 0.2em;
-            width: 0.8em;
-            height: 0.8em;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9em;
 
-            @include breakPoints(mobile) {
-              font-size: 0.8em;
-            }
-          }
-        }
 
         img {
           width: 1.2em;
